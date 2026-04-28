@@ -1,0 +1,28 @@
+name: CI/CD para ML con MLflow
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  ml_pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v3
+
+      - name: Configurar Python 3.9
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Instalar dependencias
+        run: make install
+
+      - name: Entrenar modelo y registrar en MLflow
+        run: make train
+
+      - name: Validar modelo desde registro MLflow
+        run: make validate

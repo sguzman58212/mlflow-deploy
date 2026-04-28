@@ -1,0 +1,15 @@
+artifact_uri: file:///sessions/optimistic-vigilant-gauss/mnt/M3_MLOPS_Analitica_Nube/Taller
+  4/mlflow-deploy/mlruns/d1da17d68fae45b8a425f682d34259e2/artifacts
+end_time: 1777164090396
+entry_point_name: ''
+experiment_id: '126817409681948100'
+lifecycle_stage: active
+run_id: d1da17d68fae45b8a425f682d34259e2
+run_name: useful-smelt-40
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1777164085848
+status: 3
+tags: []
+user_id: optimistic-vigilant-gauss

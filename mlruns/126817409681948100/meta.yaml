@@ -1,0 +1,9 @@
+artifact_location: file:///sessions/optimistic-vigilant-gauss/mnt/M3_MLOPS_Analitica_Nube/Taller
+  4/mlflow-deploy/mlruns
+creation_time: 1777164085775
+experiment_id: '126817409681948100'
+last_update_time: 1777164085775
+lifecycle_stage: active
+name: diabetes-progression-experiment
+trace_location: null
+workspace: default
