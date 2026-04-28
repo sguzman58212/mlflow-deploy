@@ -72,19 +72,10 @@ X_train, X_test, y_train, y_test = train_test_split(
 print(f"[INFO] Entrenamiento: {X_train.shape} | Test: {X_test.shape}")
 
 # ── Crear / recuperar experimento MLflow ───────────────────────────────────────
-try:
-    experiment_id = mlflow.create_experiment(
-        name=EXPERIMENT_NAME,
-        artifact_location=tracking_uri,
-    )
-    print(f"[INFO] Experimento '{EXPERIMENT_NAME}' creado (ID: {experiment_id})")
-except mlflow.exceptions.MlflowException as e:
-    if "RESOURCE_ALREADY_EXISTS" in str(e):
-        experiment = mlflow.get_experiment_by_name(EXPERIMENT_NAME)
-        experiment_id = experiment.experiment_id
-        print(f"[INFO] Experimento '{EXPERIMENT_NAME}' ya existe (ID: {experiment_id})")
-    else:
-        raise e
+# set_experiment crea el experimento si no existe, o lo recupera si ya existe
+experiment = mlflow.set_experiment(EXPERIMENT_NAME)
+experiment_id = experiment.experiment_id
+print(f"[INFO] Experimento '{EXPERIMENT_NAME}' activo (ID: {experiment_id})")
 
 # ── Entrenar y registrar modelo en MLflow ─────────────────────────────────────
 try:
